@@ -1,27 +1,27 @@
-const loadTubeContent = async() =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/videos/category/1000');
-    const data = await res.json();
-    const content = data.data;
+const loadTubeContent = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/videos/category/1000"
+  );
+  const data = await res.json();
+  const content = data.data;
+  console.log(content);
+  displayContent(content);
+};
+
+function displayContent(contents) {
+  console.log(contents);
+
+  const contentsection = document.getElementById("content-section");
+
+  contentsection.innerHTML = "";
+
+  contents.forEach((content) => {
     console.log(content);
-    displayContent(content);
-}
-
-    
-
-
-
-const displayContent = content =>{
-    console.log(content);
-
-    const contentsection = document.getElementById('content-section');
-
-    content.forEach(content =>{
-        // console.log(content);
-        const contentCard = document.createElement('div');
-        contentCard.classList = `card bg-base-100 shadow-[2px]`;
-        // const image = document.querySelector('.card-body img');
-        // image.classList.add('w-10 rounded-full');
-        contentCard.innerHTML = ` 
+    const contentCard = document.createElement("div");
+    contentCard.classList = `card bg-base-100 shadow-[2px]`;
+    // const image = document.querySelector('.card-body img');
+    // image.classList.add('w-10 rounded-full');
+    contentCard.innerHTML = ` 
         <figure class="" >
         <img
         src="${content.thumbnail}"
@@ -44,30 +44,29 @@ const displayContent = content =>{
         
         </div>`;
 
-
-        contentsection.appendChild(contentCard);
-
-
-    })
+    contentsection.appendChild(contentCard);
+  });
 }
 
+const filterContent = async (categoryId, name) => {
+  console.log("this is name from js:", name);
+  const response = await fetch(
+    `https://openapi.programming-hero.com/api/videos/category/${categoryId}`
+  );
+  const data = await response.json();
+  displayContent(data.data);
+  return;
+};
 
 // function newWindow() {
 //      fetch("https://openapi.programming-hero.com/api/videos/category/1002") .then(response => response.json())
 //       .then((data) => {
 //          window.open(data.data);
-//          }) 
-//          .catch((error) => console.error("oops:",error)); 
+//          })
+//          .catch((error) => console.error("oops:",error));
 //         }
 
-
-const playMusic = () => {
-    const audioPlayer = document.getElementById('audioPlayer');
-    audioPlayer.play(); // Play the audio file
-  }
-
-  // Add event listener to button to play music on click
-  document.getElementById('musicButton').addEventListener('click', playMusic);
-
+// Add event listener to button to play music on click
+//   document.getElementById('musicButton').addEventListener('click', playMusic);
 
 loadTubeContent();
