@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header >
+       <section class="px-16">
+        <div class="flex justify-between py-10 mb-7 border-b-4 border-b-slate-200">
+            <div><img src="img/Logo.png" alt=""></div>
+            <div><button class="btn btn">Sort by view</button>
+            </div>
+            <div><button class="btn btn-error">Blog</button>
+            </div>
+        </div>
+       </section>
+
+       <section>
+        <div class="text-center pl-32">
+            <div class="join gap-8 text-center justify-center">
+                <input id="all-btn"
+                  class="btn btn px-8"
+                  type="radio"
+                  name="options"
+                  aria-label="All"
+                  checked="checked" />
+                <input onclick="playMusic()" class=" btn btn px-8" type="radio" name="options" aria-label="Music" />
+                <input class="btn btn px-8" type="radio" name="options" aria-label="Comedy" />
+                <input class="btn btn px-8" type="radio" name="options" aria-label="Drawing" />
+              </div>
+        </div>
+       </section>
+    </header>
+
+    <main>
+        <section class="">
+            <div id="content-section" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-10 px-14 gap-4">
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+<!-- button -->
+<!-- <div class="join">
+    <input
+      class="join-item btn btn-square"
+      type="radio"
+      name="options"
+      aria-label="1"
+      checked="checked" />
+    <input class="join-item btn btn-square" type="radio" name="options" aria-label="2" />
+    <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />
+    <input class="join-item btn btn-square" type="radio" name="options" aria-label="4" />
+  </div> -->
+
+
+
+  <!-- <div>
+    <img src="${content.authors[0].profile_picture}" class="w-10 rounded-full">
+  </div> -->
